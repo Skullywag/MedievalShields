@@ -9,18 +9,12 @@ namespace MedievalShields
 {
     public class Apparel_MedievalShield : Apparel
     {
-        private Color color;
-        private Material shieldMat;
-        private static readonly SoundDef SoundAbsorbDamage = SoundDef.Named("PersonalShieldAbsorbDamage");
-        private static readonly SoundDef SoundBreak = SoundDef.Named("PersonalShieldBroken");
-        private Vector3 impactAngleVect;
-        public override void SpawnSetup()
-        {
- 	        base.SpawnSetup();
-            color = this.Stuff.stuffProps.color;
-            shieldMat = MaterialPool.MatFrom("Things/Item/Equipment/Apparel/Accessory/Shield", ShaderDatabase.Cutout, color);
-        }
-        private bool ShouldDisplay
+        public Material shieldMat;
+        public static readonly SoundDef SoundAbsorbDamage = SoundDef.Named("PersonalShieldAbsorbDamage");
+        public static readonly SoundDef SoundBreak = SoundDef.Named("PersonalShieldBroken");
+        public Vector3 impactAngleVect;
+        
+        public bool ShouldDisplay
         {
             get
             {
@@ -30,6 +24,7 @@ namespace MedievalShields
         public override void ExposeData()
         {
             base.ExposeData();
+            //Scribe_Values.LookValue<Color>(ref this.color, "color", new Color(0.8f, 0.8f, 0.8f), false);
         }
         public override void Tick()
         {
@@ -81,14 +76,14 @@ namespace MedievalShields
             }
             return false;
         }
-        private void AbsorbedDamage(DamageInfo dinfo)
+        public void AbsorbedDamage(DamageInfo dinfo)
         {
             Apparel_MedievalShield.SoundAbsorbDamage.PlayOneShot(this.wearer.Position);
             this.impactAngleVect = Vector3Utility.HorizontalVectorFromAngle(dinfo.Angle);
             Vector3 loc = this.wearer.TrueCenter() + this.impactAngleVect.RotatedBy(180f) * 0.5f;
             MoteThrower.ThrowStatic(loc, ThingDefOf.Mote_ShotHit_Spark, 1f);
         }
-        private void Break()
+        public void Break()
         {
             Apparel_MedievalShield.SoundBreak.PlayOneShot(this.wearer.Position);
             this.Destroy();
@@ -138,6 +133,7 @@ namespace MedievalShields
             }
             Matrix4x4 matrix = default(Matrix4x4);
             matrix.SetTRS(vector, Quaternion.AngleAxis(num, Vector3.up), s);
+            shieldMat = MaterialPool.MatFrom("Things/Item/Equipment/Apparel/Accessory/Shield", ShaderDatabase.Cutout, this.Stuff.stuffProps.color);
             Graphics.DrawMesh(MeshPool.plane10, matrix, shieldMat, 0);
         }
     }
