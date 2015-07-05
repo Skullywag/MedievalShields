@@ -37,8 +37,8 @@
   </ThingDef>
 
   <ThingDef ParentName="ApparelShieldBase">
-    <thingClass>MedievalShields.Apparel_MedievalShield</thingClass>
     <defName>Shield</defName>
+    <thingClass>MedievalShields.Apparel_MedievalShield</thingClass>
     <label>shield</label>
     <description>A shield made from hard materials able to deflect most types of attack. Wears out with use. </description>
     <graphicData>
