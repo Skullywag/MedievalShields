@@ -50,7 +50,13 @@
       <MarketValue>600</MarketValue>
       <WorkToMake>1200</WorkToMake>
       <DeteriorationRate>1</DeteriorationRate>
+      <ArmorRating_Blunt>0.12</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.24</ArmorRating_Sharp>
     </statBases>
+    <equippedStatOffsets>
+      <MoveSpeed>-0.10</MoveSpeed>
+      <WorkSpeedGlobal>-0.10</WorkSpeedGlobal>
+    </equippedStatOffsets>
     <costStuffCount>60</costStuffCount>
     <stuffCategories>
       <li>Metallic</li>
@@ -59,6 +65,9 @@
     <apparel>
       <bodyPartGroups>
         <li>Torso</li>
+        <li>Arms</li>
+        <li>Shoulders</li>
+        <li>LeftHand</li>
       </bodyPartGroups>
       <layers>
         <li>Accessory</li>
