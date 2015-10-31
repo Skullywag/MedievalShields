@@ -104,7 +104,7 @@ namespace MedievalShields
             {
                 return true;
             }
-            return false;
+            return root.AdjacentTo8Way(targ.Cell);
         }
         public override void DrawWornExtras()
         {
