@@ -91,18 +91,20 @@ namespace MedievalShields
         }
         public override bool AllowVerbCast(IntVec3 root, TargetInfo targ)
         {
-            equippedDef = this.wearer.equipment.Primary.def;
-            if (equippedDef.IsMeleeWeapon)
+            if (this.wearer.equipment.Primary != null)
             {
-                return true;
-            }
-            if (equippedDef.defName.Contains("pistol") || equippedDef.defName.Contains("Pistol"))
-            {
-                return true;
-            }
-            if (equippedDef == ThingDef.Named("Gun_PDW"))
-            {
-                return true;
+                if (this.wearer.equipment.Primary.def.IsMeleeWeapon)
+                {
+                    return true;
+                }
+                if (this.wearer.equipment.Primary.def.defName.Contains("pistol") || this.wearer.equipment.Primary.def.defName.Contains("Pistol"))
+                {
+                    return true;
+                }
+                if (this.wearer.equipment.Primary.def.defName.Contains("Gun_PDW"))
+                {
+                    return true;
+                }
             }
             return root.AdjacentTo8Way(targ.Cell);
         }
