@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Diagnostics;
 using UnityEngine;
 using Verse;
@@ -14,12 +15,25 @@ namespace MedievalShields
         public static readonly SoundDef SoundBreak = SoundDef.Named("PersonalShieldBroken");
         public Vector3 impactAngleVect;
         public ThingDef equippedDef;
-        
+
+        public override void SpawnSetup()
+        {
+            if (this.def.defName == "KiteShield")
+            {
+                shieldMat = MaterialPool.MatFrom("Things/Item/Equipment/Apparel/Accessory/KiteShield", ShaderDatabase.Cutout, this.Stuff.stuffProps.color);
+            }
+            else
+            {
+                shieldMat = MaterialPool.MatFrom("Things/Item/Equipment/Apparel/Accessory/BucklerSingle/buckler1", ShaderDatabase.Cutout, this.Stuff.stuffProps.color);
+            }
+            base.SpawnSetup();
+        }
+
         public bool ShouldDisplay
         {
             get
             {
-                return !this.wearer.Dead && !this.wearer.InBed() && !this.wearer.Downed && (!this.wearer.IsPrisonerOfColony || (this.wearer.BrokenStateDef != null && this.wearer.BrokenStateDef == BrokenStateDefOf.Berserk)) || this.wearer.Faction.HostileTo(Faction.OfColony);
+                return !this.wearer.Dead && !this.wearer.InBed() && !this.wearer.Downed && (!this.wearer.IsPrisonerOfColony || (this.wearer.MentalStateDef != null && this.wearer.MentalStateDef == MentalStateDefOf.Berserk)) || this.wearer.Faction.HostileTo(Faction.OfColony);
             }
         }
         public override void ExposeData()
@@ -108,12 +122,55 @@ namespace MedievalShields
             }
             return root.AdjacentTo8Way(targ.Cell);
         }
+
+        public override IEnumerable<Gizmo> GetWornGizmos()
+        {
+            yield return new Apparel_MedievalShield.Gizmo_ShieldStatus
+            {
+                shield = this
+            };
+            yield break;
+        }
+
+        internal class Gizmo_ShieldStatus : Gizmo
+        {
+            public Apparel_MedievalShield shield;
+            private static readonly Texture2D FullTex = SolidColorMaterials.NewSolidColorTexture(new Color(0.2f, 0.2f, 0.24f));
+            private static readonly Texture2D EmptyTex = SolidColorMaterials.NewSolidColorTexture(Color.clear);
+            public override float Width
+            {
+                get
+                {
+                    return 140f;
+                }
+            }
+            public override GizmoResult GizmoOnGUI(Vector2 topLeft)
+            {
+                Rect rect = new Rect(topLeft.x, topLeft.y, this.Width, 75f);
+                Widgets.DrawWindowBackground(rect);
+                Rect rect2 = GenUI.ContractedBy(rect, 6f);
+                Rect rect3 = rect2;
+                rect3.height = rect.height / 2f;
+                Text.Font = GameFont.Tiny;
+                Widgets.Label(rect3, this.shield.LabelCap);
+                Rect rect4 = rect2;
+                rect4.yMin = rect.y + rect.height / 2f;
+                float num = this.shield.MaxHitPoints / this.shield.HitPoints;
+                Widgets.FillableBar(rect4, num, Apparel_MedievalShield.Gizmo_ShieldStatus.FullTex, Apparel_MedievalShield.Gizmo_ShieldStatus.EmptyTex, false);
+                Text.Font = GameFont.Small;
+                Text.Anchor = TextAnchor.MiddleCenter;
+                Widgets.Label(rect4, (this.shield.MaxHitPoints).ToString("F0") + " / " + (this.shield.HitPoints).ToString("F0"));
+                Text.Anchor = TextAnchor.UpperLeft;
+                return new GizmoResult(0);
+            }
+        }
+
         public override void DrawWornExtras()
         {
             if (this.ShouldDisplay)
             {
                 float num = 0f;
-                Vector3 vector = this.wearer.drawer.DrawPos;
+                Vector3 vector = this.wearer.Drawer.DrawPos;
                 vector.y = Altitudes.AltitudeFor(AltitudeLayer.Pawn);
                 Vector3 s = new Vector3(1f, 1f, 1f);
                 if (this.wearer.Rotation == Rot4.North)
@@ -151,7 +208,6 @@ namespace MedievalShields
                 }
                 Matrix4x4 matrix = default(Matrix4x4);
                 matrix.SetTRS(vector, Quaternion.AngleAxis(num, Vector3.up), s);
-                shieldMat = MaterialPool.MatFrom("Things/Item/Equipment/Apparel/Accessory/Shield", ShaderDatabase.Cutout, this.Stuff.stuffProps.color);
                 Graphics.DrawMesh(MeshPool.plane10, matrix, shieldMat, 0);
             }
         }

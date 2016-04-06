@@ -18,3 +18,23 @@ C:\Users\mjsku_000\Desktop\RimWorldAlpha12Win\RimWorld906Win\Mods\MedievalShield
 \\MAIN-RIG\LocalShare\RimWorldAlpha12dWin\RimWorld914Win\Mods\MedievalShields\Source\MedievalShields\obj\Debug\MedievalShields.csprojResolveAssemblyReference.cache
 \\MAIN-RIG\LocalShare\RimWorldAlpha12dWin\RimWorld914Win\Mods\MedievalShields\Source\MedievalShields\obj\Debug\MedievalShields.dll
 \\MAIN-RIG\LocalShare\RimWorldAlpha12dWin\RimWorld914Win\Mods\MedievalShields\Source\MedievalShields\obj\Debug\MedievalShields.pdb
+C:\Users\mjsku\Desktop\New folder\RimWorldAlpha12dWin\RimWorld914Win\Mods\MedievalShields\Source\MedievalShields\bin\Debug\MedievalShields.dll
+C:\Users\mjsku\Desktop\New folder\RimWorldAlpha12dWin\RimWorld914Win\Mods\MedievalShields\Source\MedievalShields\bin\Debug\MedievalShields.pdb
+C:\Users\mjsku\Desktop\New folder\RimWorldAlpha12dWin\RimWorld914Win\Mods\MedievalShields\Source\MedievalShields\obj\Debug\MedievalShields.csprojResolveAssemblyReference.cache
+C:\Users\mjsku\Desktop\New folder\RimWorldAlpha12dWin\RimWorld914Win\Mods\MedievalShields\Source\MedievalShields\obj\Debug\MedievalShields.dll
+C:\Users\mjsku\Desktop\New folder\RimWorldAlpha12dWin\RimWorld914Win\Mods\MedievalShields\Source\MedievalShields\obj\Debug\MedievalShields.pdb
+C:\Users\mjsku\Desktop\RimWorld1117WinDev\Mods\MedievalShields\Source\MedievalShields\bin\Debug\MedievalShields.dll
+C:\Users\mjsku\Desktop\RimWorld1117WinDev\Mods\MedievalShields\Source\MedievalShields\bin\Debug\MedievalShields.pdb
+C:\Users\mjsku\Desktop\RimWorld1117WinDev\Mods\MedievalShields\Source\MedievalShields\obj\Debug\MedievalShields.csprojResolveAssemblyReference.cache
+C:\Users\mjsku\Desktop\RimWorld1117WinDev\Mods\MedievalShields\Source\MedievalShields\obj\Debug\MedievalShields.dll
+C:\Users\mjsku\Desktop\RimWorld1117WinDev\Mods\MedievalShields\Source\MedievalShields\obj\Debug\MedievalShields.pdb
+C:\Users\mjsku\Desktop\RimWorld1131WinDev\Mods\MedievalShields\Source\MedievalShields\bin\Debug\MedievalShields.dll
+C:\Users\mjsku\Desktop\RimWorld1131WinDev\Mods\MedievalShields\Source\MedievalShields\bin\Debug\MedievalShields.pdb
+C:\Users\mjsku\Desktop\RimWorld1131WinDev\Mods\MedievalShields\Source\MedievalShields\obj\Debug\MedievalShields.csprojResolveAssemblyReference.cache
+C:\Users\mjsku\Desktop\RimWorld1131WinDev\Mods\MedievalShields\Source\MedievalShields\obj\Debug\MedievalShields.dll
+C:\Users\mjsku\Desktop\RimWorld1131WinDev\Mods\MedievalShields\Source\MedievalShields\obj\Debug\MedievalShields.pdb
+C:\Users\mjsku\Desktop\RimWorldAlpha13Win\RimWorld1135Win\Mods\MedievalShields\Source\MedievalShields\bin\Debug\MedievalShields.dll
+C:\Users\mjsku\Desktop\RimWorldAlpha13Win\RimWorld1135Win\Mods\MedievalShields\Source\MedievalShields\bin\Debug\MedievalShields.pdb
+C:\Users\mjsku\Desktop\RimWorldAlpha13Win\RimWorld1135Win\Mods\MedievalShields\Source\MedievalShields\obj\Debug\MedievalShields.csprojResolveAssemblyReference.cache
+C:\Users\mjsku\Desktop\RimWorldAlpha13Win\RimWorld1135Win\Mods\MedievalShields\Source\MedievalShields\obj\Debug\MedievalShields.dll
+C:\Users\mjsku\Desktop\RimWorldAlpha13Win\RimWorld1135Win\Mods\MedievalShields\Source\MedievalShields\obj\Debug\MedievalShields.pdb

@@ -1,48 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-  <ThingDef Name="ApparelShieldBase" Abstract="True">
-    <thingClass>Apparel</thingClass>
-    <category>Item</category>
-    <selectable>True</selectable>
-    <pathCost>10</pathCost>
-    <useHitPoints>True</useHitPoints>
-    <graphicData>
-      <onGroundRandomRotateAngle>35</onGroundRandomRotateAngle>
-    </graphicData>
-    <drawGUIOverlay>true</drawGUIOverlay>
-    <statBases>
-      <MaxHitPoints>100</MaxHitPoints>
-      <Flammability>1.0</Flammability>
-      <DeteriorationRate>1</DeteriorationRate>
-      <SellPriceFactor>0.5</SellPriceFactor>
-    </statBases>
-    <altitudeLayer>Item</altitudeLayer>
-    <alwaysHaulable>True</alwaysHaulable>
-    <tickerType>Never</tickerType>
-    <thingCategories>
-      <li>Apparel</li>
-    </thingCategories>
-    <comps>
-      <li>
-        <compClass>CompForbiddable</compClass>
-      </li>
-      <li>
-        <compClass>CompColorable</compClass>
-      </li>
-      <li>
-        <compClass>CompQuality</compClass>
-      </li>
-    </comps>
-  </ThingDef>
-
   <ThingDef ParentName="ApparelShieldBase">
-    <defName>Shield</defName>
+    <defName>KiteShield</defName>
     <thingClass>MedievalShields.Apparel_MedievalShield</thingClass>
-    <label>shield</label>
+    <label>kite shield</label>
     <description>A shield made from hard materials able to deflect most types of attack. Wears out with use. </description>
     <graphicData>
-      <texPath>Things/Item/Equipment/Apparel/Accessory/Shield</texPath>
+      <texPath>Things/Item/Equipment/Apparel/Accessory/KiteShield</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <tickerType>Normal</tickerType>
@@ -74,14 +39,15 @@
       </layers>
       <commonality>1</commonality>
       <tags>
-        <li>Shield</li>
+        <li>PersonalShield</li>
       </tags>
     </apparel>
     <recipeMaker>
       <workSpeedStat>SmithingSpeed</workSpeedStat>
       <workSkill>Crafting</workSkill>
       <recipeUsers>
-        <li>TableSmithing</li>
+        <li>FueledSmithy</li>
+        <li>ElectricSmithy</li>
       </recipeUsers>
       <effectWorking>Smelt</effectWorking>
     </recipeMaker>
