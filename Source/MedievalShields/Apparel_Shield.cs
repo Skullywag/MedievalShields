@@ -15,21 +15,10 @@ namespace MedievalShields
         public static readonly SoundDef SoundBreak = SoundDef.Named("PersonalShieldBroken");
         public Vector3 impactAngleVect;
         public ThingDef equippedDef;
+        public Material kiteMat = MaterialPool.MatFrom("Things/Item/Equipment/Apparel/Accessory/KiteShield");
+        public Material bucklerMat = MaterialPool.MatFrom("Things/Item/Equipment/Apparel/Accessory/BucklerSingle/buckler1");
 
-        public override void SpawnSetup()
-        {
-            if (this.def.defName == "KiteShield")
-            {
-                shieldMat = MaterialPool.MatFrom("Things/Item/Equipment/Apparel/Accessory/KiteShield", ShaderDatabase.Cutout, this.Stuff.stuffProps.color);
-            }
-            else
-            {
-                shieldMat = MaterialPool.MatFrom("Things/Item/Equipment/Apparel/Accessory/BucklerSingle/buckler1", ShaderDatabase.Cutout, this.Stuff.stuffProps.color);
-            }
-            base.SpawnSetup();
-        }
-
-        public bool ShouldDisplay
+    public bool ShouldDisplay
         {
             get
             {
@@ -111,11 +100,19 @@ namespace MedievalShields
                 {
                     return true;
                 }
-                if (this.wearer.equipment.Primary.def.defName.Contains("pistol") || this.wearer.equipment.Primary.def.defName.Contains("Pistol"))
+                if (this.wearer.equipment.Primary.def.defName.Equals("Gun_Pistol"))
                 {
                     return true;
                 }
-                if (this.wearer.equipment.Primary.def.defName.Contains("Gun_PDW"))
+                if (this.wearer.equipment.Primary.def.defName.Equals("Gun_PDW"))
+                {
+                    return true;
+                }
+                if (this.wearer.equipment.Primary.def.defName.Equals("Gun_HeavySMG"))
+                {
+                    return true;
+                }
+                if (this.wearer.equipment.Primary.def.weaponTags.Contains("MedievalShields_ValidSidearm"))
                 {
                     return true;
                 }
@@ -206,9 +203,22 @@ namespace MedievalShields
                         }
                     }
                 }
-                Matrix4x4 matrix = default(Matrix4x4);
-                matrix.SetTRS(vector, Quaternion.AngleAxis(num, Vector3.up), s);
-                Graphics.DrawMesh(MeshPool.plane10, matrix, shieldMat, 0);
+                if (this.def.defName == "KiteShield")
+                {
+                    kiteMat.shader = ShaderDatabase.Cutout;
+                    kiteMat.color = Stuff.stuffProps.color;
+                    Matrix4x4 matrix = default(Matrix4x4);
+                    matrix.SetTRS(vector, Quaternion.AngleAxis(num, Vector3.up), s);
+                    Graphics.DrawMesh(MeshPool.plane10, matrix, kiteMat, 0);
+                }
+                else
+                {
+                    bucklerMat.shader = ShaderDatabase.Cutout;
+                    bucklerMat.color = Stuff.stuffProps.color;
+                    Matrix4x4 matrix = default(Matrix4x4);
+                    matrix.SetTRS(vector, Quaternion.AngleAxis(num, Vector3.up), s);
+                    Graphics.DrawMesh(MeshPool.plane10, matrix, bucklerMat, 0);
+                }
             }
         }
     }
