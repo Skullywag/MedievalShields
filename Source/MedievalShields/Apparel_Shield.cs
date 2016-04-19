@@ -156,7 +156,7 @@ namespace MedievalShields
                 Widgets.FillableBar(rect4, num, Apparel_MedievalShield.Gizmo_ShieldStatus.FullTex, Apparel_MedievalShield.Gizmo_ShieldStatus.EmptyTex, false);
                 Text.Font = GameFont.Small;
                 Text.Anchor = TextAnchor.MiddleCenter;
-                Widgets.Label(rect4, (this.shield.MaxHitPoints).ToString("F0") + " / " + (this.shield.HitPoints).ToString("F0"));
+                Widgets.Label(rect4, (this.shield.HitPoints).ToString("F0") + " / " + (this.shield.MaxHitPoints).ToString("F0"));
                 Text.Anchor = TextAnchor.UpperLeft;
                 return new GizmoResult(0);
             }
