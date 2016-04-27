@@ -14,11 +14,8 @@ namespace MedievalShields
         public static readonly SoundDef SoundAbsorbDamage = SoundDef.Named("PersonalShieldAbsorbDamage");
         public static readonly SoundDef SoundBreak = SoundDef.Named("PersonalShieldBroken");
         public Vector3 impactAngleVect;
-        public ThingDef equippedDef;
-        public Material kiteMat = MaterialPool.MatFrom("Things/Item/Equipment/Apparel/Accessory/KiteShield");
-        public Material bucklerMat = MaterialPool.MatFrom("Things/Item/Equipment/Apparel/Accessory/BucklerSingle/buckler1");
 
-    public bool ShouldDisplay
+        public bool ShouldDisplay
         {
             get
             {
@@ -203,22 +200,15 @@ namespace MedievalShields
                         }
                     }
                 }
-                if (this.def.defName == "KiteShield")
+                if(shieldMat == null)
                 {
-                    kiteMat.shader = ShaderDatabase.Cutout;
-                    kiteMat.color = Stuff.stuffProps.color;
-                    Matrix4x4 matrix = default(Matrix4x4);
-                    matrix.SetTRS(vector, Quaternion.AngleAxis(num, Vector3.up), s);
-                    Graphics.DrawMesh(MeshPool.plane10, matrix, kiteMat, 0);
+                    shieldMat = MaterialPool.MatFrom(def.graphicData.texPath);
                 }
-                else
-                {
-                    bucklerMat.shader = ShaderDatabase.Cutout;
-                    bucklerMat.color = Stuff.stuffProps.color;
-                    Matrix4x4 matrix = default(Matrix4x4);
-                    matrix.SetTRS(vector, Quaternion.AngleAxis(num, Vector3.up), s);
-                    Graphics.DrawMesh(MeshPool.plane10, matrix, bucklerMat, 0);
-                }
+                shieldMat.shader = ShaderDatabase.Cutout;
+                shieldMat.color = Stuff.stuffProps.color;
+                Matrix4x4 matrix = default(Matrix4x4);
+                matrix.SetTRS(vector, Quaternion.AngleAxis(num, Vector3.up), s);
+                Graphics.DrawMesh(MeshPool.plane10, matrix, shieldMat, 0);
             }
         }
     }
