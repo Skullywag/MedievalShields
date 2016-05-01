@@ -12,7 +12,6 @@
     </graphicData>
     <tickerType>Normal</tickerType>
     <statBases>
-      <MarketValue>600</MarketValue>
       <WorkToMake>1200</WorkToMake>
       <DeteriorationRate>1</DeteriorationRate>
       <ArmorRating_Blunt>0.12</ArmorRating_Blunt>
