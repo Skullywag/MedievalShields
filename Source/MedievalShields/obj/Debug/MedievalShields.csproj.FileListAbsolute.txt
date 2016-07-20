@@ -43,3 +43,13 @@ C:\Users\mjsku\Desktop\RimWorldAlpha13Win\RimWorld1135Win\Mods\MedievalShields\S
 \\MAIN-RIG\LocalShare\RimWorldAlpha13Win\RimWorld1135Win\Mods\MedievalShields\Source\MedievalShields\obj\Debug\MedievalShields.pdb
 \\MAIN-RIG\LocalShare\RimWorldAlpha13Win\RimWorld1135Win\Mods\MedievalShields\Source\MedievalShields\bin\Debug\MedievalShields.dll
 \\MAIN-RIG\LocalShare\RimWorldAlpha13Win\RimWorld1135Win\Mods\MedievalShields\Source\MedievalShields\bin\Debug\MedievalShields.pdb
+C:\Users\mjsku\Desktop\RimWorld1232WinDev\Mods\MedievalShields\Source\MedievalShields\obj\Debug\MedievalShields.csprojResolveAssemblyReference.cache
+C:\Users\mjsku\Desktop\RimWorld1232WinDev\Mods\MedievalShields\Source\MedievalShields\obj\Debug\MedievalShields.dll
+C:\Users\mjsku\Desktop\RimWorld1232WinDev\Mods\MedievalShields\Source\MedievalShields\obj\Debug\MedievalShields.pdb
+C:\Users\mjsku\Desktop\RimWorld1232WinDev\Mods\MedievalShields\Source\MedievalShields\bin\Debug\MedievalShields.dll
+C:\Users\mjsku\Desktop\RimWorld1232WinDev\Mods\MedievalShields\Source\MedievalShields\bin\Debug\MedievalShields.pdb
+C:\Users\mjsku\Desktop\RimWorld1232WinDev\Mods\MedievalShields\Source\MedievalShields\bin\Debug\Assembly-CSharp.dll
+C:\Users\mjsku\Desktop\RimWorld1232WinDev\Mods\MedievalShields\Source\MedievalShields\bin\Debug\UnityEngine.dll
+C:\Users\mjsku\Desktop\RimWorld1232WinDev\Mods\MedievalShields\Source\MedievalShields\bin\Debug\Assembly-CSharp-firstpass.dll
+C:\Users\mjsku\Desktop\RimWorld1232WinDev\Mods\MedievalShields\Source\MedievalShields\bin\Debug\NAudio.dll
+C:\Users\mjsku\Desktop\RimWorld1232WinDev\Mods\MedievalShields\Source\MedievalShields\bin\Debug\NVorbis.dll

@@ -19,7 +19,7 @@ namespace MedievalShields
         {
             get
             {
-                return !this.wearer.Dead && !this.wearer.InBed() && !this.wearer.Downed && (!this.wearer.IsPrisonerOfColony || (this.wearer.MentalStateDef != null && this.wearer.MentalStateDef == MentalStateDefOf.Berserk)) || this.wearer.Faction.HostileTo(Faction.OfColony);
+                return !this.wearer.Dead && !this.wearer.InBed() && !this.wearer.Downed && (!this.wearer.IsPrisonerOfColony || (this.wearer.MentalStateDef != null && this.wearer.MentalStateDef == MentalStateDefOf.Berserk)) || this.wearer.Faction.HostileTo(Faction.OfPlayer);
             }
         }
         public override void ExposeData()
