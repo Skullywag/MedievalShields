@@ -20,6 +20,9 @@
     <altitudeLayer>Item</altitudeLayer>
     <alwaysHaulable>True</alwaysHaulable>
     <tickerType>Never</tickerType>
+    <thingCategories>
+      <li>Apparel</li>
+    </thingCategories>
     <comps>
       <li Class="CompProperties_Forbiddable"/>
       <li>
@@ -45,6 +48,7 @@
     <statBases>
       <WorkToMake>1000</WorkToMake>
       <DeteriorationRate>1</DeteriorationRate>
+      <Mass>3</Mass>
       <ArmorRating_Blunt>0.08</ArmorRating_Blunt>
       <ArmorRating_Sharp>0.18</ArmorRating_Sharp>
     </statBases>

@@ -14,6 +14,7 @@
     <statBases>
       <WorkToMake>1200</WorkToMake>
       <DeteriorationRate>1</DeteriorationRate>
+      <Mass>4</Mass>
       <ArmorRating_Blunt>0.12</ArmorRating_Blunt>
       <ArmorRating_Sharp>0.24</ArmorRating_Sharp>
     </statBases>

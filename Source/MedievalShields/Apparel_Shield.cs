@@ -38,7 +38,7 @@ namespace MedievalShields
                 SkillRecord melee = this.wearer.skills.GetSkill(SkillDefOf.Melee);
                 System.Random random = new System.Random();
                 int chance = random.Next(0, 21);
-                if (chance >= melee.level)
+                if (chance >= melee.Level)
                 {
                     System.Random random1 = new System.Random();
                     int chance1 = random1.Next(0, 5);
@@ -79,14 +79,14 @@ namespace MedievalShields
         }
         public void AbsorbedDamage(DamageInfo dinfo)
         {
-            Apparel_MedievalShield.SoundAbsorbDamage.PlayOneShot(this.wearer.Position);
+            Apparel_MedievalShield.SoundAbsorbDamage.PlayOneShot(new TargetInfo(this.wearer.Position, this.wearer.Map, false));
             this.impactAngleVect = Vector3Utility.HorizontalVectorFromAngle(dinfo.Angle);
             Vector3 loc = this.wearer.TrueCenter() + this.impactAngleVect.RotatedBy(180f) * 0.5f;
-            MoteThrower.ThrowStatic(loc, ThingDefOf.Mote_ShotHit_Spark, 1f);
+            MoteMaker.MakeStaticMote(loc, this.wearer.Map, ThingDefOf.Mote_ShotHit_Spark, 1f);
         }
         public void Break()
         {
-            Apparel_MedievalShield.SoundBreak.PlayOneShot(this.wearer.Position);
+            Apparel_MedievalShield.SoundBreak.PlayOneShot(new TargetInfo(this.wearer.Position, this.wearer.Map, false));
             this.Destroy();
         }
         public override bool AllowVerbCast(IntVec3 root, TargetInfo targ)
